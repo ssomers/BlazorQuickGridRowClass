@@ -1,0 +1,11 @@
+::deep table.quickgrid {
+    border: 1px solid;
+}
+
+    ::deep table.quickgrid > tbody > tr {
+        color: lightgray;
+    }
+
+        ::deep table.quickgrid > tbody > tr.make-me-green {
+            color: green;
+        }

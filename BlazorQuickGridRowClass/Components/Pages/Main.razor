@@ -1,0 +1,24 @@
+@page "/"
+
+<div>
+	We want something like:
+	<table class="quickgrid">
+		<thead><tr><th></th></tr></thead>
+		<tbody>
+			<tr class="make-me-green"><td>green</td></tr>
+			<tr><td>plain</td></tr>
+		</tbody>
+	</table>
+</div>
+
+<div>
+	and we get:
+	<QuickGrid Items=@items.AsQueryable() RowClass=GetRowCssClass>
+		<PropertyColumn Property="c => c" />
+	</QuickGrid>
+</div>
+
+@code {
+	static readonly string[] items = { "green", "plain" };
+	private string GetRowCssClass(string item) => "make-me-" + item;
+}
